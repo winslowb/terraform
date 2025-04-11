@@ -14,13 +14,19 @@ This module-based Terraform project deploys a secure, HTTPS-enabled static websi
 secure-s3-https/
 
 ├── main.tf              # Root config - wires modules together
+
 ├── variables.tf         # Shared input variables
+
 ├── terraform.tfvars     # User-specific config (domain, bucket, etc.)
+
 └── modules/
-    ├── s3_static_site/       # S3 bucket + website config + default index.html
-    ├── cloudfront_cdn/       # CloudFront + origin access control
-    ├── cert_dns/             # ACM cert + DNS validation in Route 53
-    └── route53_record/       # A-record alias to CloudFront
+    ├── s3_static_site/       # S3 bucket + website config + default index.html #
+    
+    ├── cloudfront_cdn/       # CloudFront + origin access control #
+    
+    ├── cert_dns/             # ACM cert + DNS validation in Route 53 #
+    
+    └── route53_record/       # A-record alias to CloudFront #
 
 🚀 How to Deploy
 Clone the repo and go into the project:
