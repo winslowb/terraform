@@ -1,0 +1,14 @@
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+.crash/
+.terraform.lock.hcl
+*.tfvars
+*.tfvars.json
+
+# Ignore sensitive files and system clutter
+*.pem
+*.key
+*.crt
+.DS_Store
