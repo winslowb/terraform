@@ -19,6 +19,7 @@ Copy
 Edit
 
 secure-s3-https/
+
 ├── main.tf              # Root config - wires modules together
 ├── variables.tf         # Shared input variables
 ├── terraform.tfvars     # User-specific config (domain, bucket, etc.)
