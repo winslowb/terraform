@@ -20,6 +20,7 @@ secure-s3-https/
 ├── terraform.tfvars     # User-specific config (domain, bucket, etc.)
 
 └── modules/
+    
     ├── s3_static_site/       # S3 bucket + website config + default index.html #
     
     ├── cloudfront_cdn/       # CloudFront + origin access control #
