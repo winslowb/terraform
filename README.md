@@ -1,4 +1,6 @@
 📁 terraform/secure-s3-https
+
+
 🔐 Deploy a Secure Static Website to AWS using Terraform
 This module-based Terraform project deploys a secure, HTTPS-enabled static website using:
 
@@ -11,9 +13,11 @@ Route 53 for DNS
 ACM for TLS certificates (auto-validated via DNS)
 
 🗂️ Project Structure
+
 bash
 Copy
 Edit
+
 secure-s3-https/
 ├── main.tf              # Root config - wires modules together
 ├── variables.tf         # Shared input variables
@@ -23,6 +27,7 @@ secure-s3-https/
     ├── cloudfront_cdn/       # CloudFront + origin access control
     ├── cert_dns/             # ACM cert + DNS validation in Route 53
     └── route53_record/       # A-record alias to CloudFront
+
 🚀 How to Deploy
 Clone the repo and go into the project:
 
