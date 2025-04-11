@@ -14,9 +14,6 @@ ACM for TLS certificates (auto-validated via DNS)
 
 🗂️ Project Structure
 
-bash
-Copy
-Edit
 
 secure-s3-https/
 
@@ -32,24 +29,15 @@ secure-s3-https/
 🚀 How to Deploy
 Clone the repo and go into the project:
 
-bash
-Copy
-Edit
 git clone https://github.com/your-username/terraform.git
 cd terraform/secure-s3-https
 Set up your values in terraform.tfvars:
 
-hcl
-Copy
-Edit
 bucket_name  = "your-unique-bucket-name"
 domain_name  = "subdomain.example.com"
 zone_name    = "example.com."
 Initialize Terraform and deploy:
 
-bash
-Copy
-Edit
 terraform init
 terraform plan
 terraform apply
@@ -59,9 +47,6 @@ https://subdomain.example.com
 🧼 Teardown
 To clean everything up:
 
-bash
-Copy
-Edit
 aws s3 rm s3://your-unique-bucket-name --recursive
 terraform destroy
 🧱 Modules in This Project
