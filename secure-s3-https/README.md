@@ -27,8 +27,8 @@ secure-s3-https/
     └── route53_record/       # A-record alias to CloudFront #
 
 🚀 How to Deploy
-Clone the repo and go into the project:
 
+Clone the repo and go into the project:
 - git clone https://github.com/your-username/terraform.git
 - cd terraform/secure-s3-https
 - Set up your values in terraform.tfvars:
