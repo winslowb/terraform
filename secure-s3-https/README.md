@@ -7,7 +7,6 @@ This module-based Terraform project deploys a secure, HTTPS-enabled static websi
 - ACM for TLS certificates (auto-validated via DNS)
 
 🗂️ Project Structure
-
 secure-s3-https/
 
 ├── main.tf              # Root config - wires modules together
@@ -39,15 +38,12 @@ secure-s3-https/
     - terraform apply
     - Visit your site at: https://site.doit.com
 
-
 🧼 Teardown
 To clean everything up:
-
 - aws s3 rm s3://your-unique-bucket-name --recursive
 - terraform destroy
 
 🧱 Modules in This Project
-
 - Module	Responsibility
 - s3_static_site	Creates S3 bucket and uploads index.html
 - cloudfront_cdn	CloudFront CDN + OAC setup
