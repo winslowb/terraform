@@ -1,11 +1,11 @@
 variable "domain_name" {
   type        = string
-  description = "The FQDN for the site (e.g. site.example.com)"
+  description = "The FQDN for the site (e.g. site.doit.com)"
 }
 
 variable "zone_name" {
   type        = string
-  description = "Parent Route 53 zone name (e.g. example.com.)"
+  description = "Parent Route 53 zone name (e.g. doit.com.)"
 }
 
 variable "cloudfront_domain_name" {
