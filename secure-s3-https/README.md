@@ -32,11 +32,10 @@ Clone the repo and go into the project:
 - git clone https://github.com/your-username/terraform.git
 - cd terraform/secure-s3-https
 - Set up your values in terraform.tfvars:
-
-bucket_name  = "your-unique-bucket-name"
-domain_name  = "subdomain.example.com"
-zone_name    = "example.com."
-Initialize Terraform and deploy:
+    - bucket_name  = "your-unique-bucket-name"
+    - domain_name  = "subdomain.example.com"
+    - zone_name    = "example.com."
+- Initialize Terraform and deploy:
 
 terraform init
 terraform plan
