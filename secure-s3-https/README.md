@@ -33,15 +33,14 @@ Clone the repo and go into the project:
 - cd terraform/secure-s3-https
 - Set up your values in terraform.tfvars:
     - bucket_name  = "your-unique-bucket-name"
-    - domain_name  = "subdomain.example.com"
-    - zone_name    = "example.com."
+    - domain_name  = "your-unique domain ie. site.doit.com.com"
+    - zone_name    = "your-unique zone name ie. doit.com."
 - Initialize Terraform and deploy:
+    - terraform init
+    - terraform plan
+    - terraform apply
+    - Visit your site at: https://site.doit.com
 
-terraform init
-terraform plan
-terraform apply
-Visit your site at:
-https://doit.example.com
 
 🧼 Teardown
 To clean everything up:
