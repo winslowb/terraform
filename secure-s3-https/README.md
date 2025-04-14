@@ -2,11 +2,10 @@
 This module-based Terraform project deploys a secure, HTTPS-enabled static website using:
 
 Modules in This Project
- |Module	|Responsibility|
- |s3_static_site	|Creates S3 bucket and uploads index.html|
- |cloudfront_cdn	|CloudFront CDN + OAC setup|
- |cert_dns	|ACM TLS cert with DNS validation|
- |route53_record	|A-record for CloudFront in Route 53|
+ - s3_static_site	Creates S3 bucket and uploads index.html
+ - cloudfront_cdn	CloudFront CDN + OAC setup
+ - cert_dns	        ACM TLS cert with DNS validation
+ - route53_record	A-record for CloudFront in Route 53
 
 
 🚀 How to Deploy
