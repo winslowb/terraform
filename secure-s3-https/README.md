@@ -1,4 +1,4 @@
-🔐 Deploy a Secure Static Website to AWS using Terraform
+### Deploy a Secure Static Website to AWS using Terraform
 This module-based Terraform project deploys a secure, HTTPS-enabled static website using:
 
 Modules in This Project
@@ -8,7 +8,7 @@ Modules in This Project
  - _route53_record_	# A-record for CloudFront in Route 53
 
 
-🚀 How to Deploy
+### How to Deploy
 Ensure you have terraform installed, and that your AWS creds are exported, then;
 - clone winslowb/terraform.git
 - Set up your values in ./terraform.tfvars:
@@ -24,7 +24,7 @@ Visit your site at: https://$domain_name/$zone_name
 
 This does not automatically provide WAF protection. You can enable this within your cdn distrobution by 'Enabling' *Security - Web Application Firewall(WAF)*.
 
-🧼 Teardown
+### Teardown
 To clean everything up:
 - aws s3 rm s3://$bucket_name --recursive (or delete index.html from the console)
 - terraform destroy
