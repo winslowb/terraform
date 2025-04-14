@@ -22,6 +22,8 @@ Ensure you have terraform installed, and that your AWS creds are exported, then;
 
 Visit your site at: https://$domain_name/$zone_name
 
+This does not automatically provide WAF protection. You can enable this within your cdn distrobution by 'Enabling' *Security - Web Application Firewall(WAF)*.
+
 🧼 Teardown
 To clean everything up:
 - aws s3 rm s3://your-unique-bucket-name --recursive
