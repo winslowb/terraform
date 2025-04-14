@@ -6,18 +6,9 @@ This module-based Terraform project deploys a secure, HTTPS-enabled static websi
 - Route 53 for DNS
 - ACM for TLS certificates (auto-validated via DNS)
 
-🗂️ Project Structure
-secure-s3-https/
-    main.tf              # Root config - wires modules together
-    variables.tf         # Shared input variables
-    terraform.tfvars     # User-specific config (domain, bucket, etc.)
-    modules/
-        s3_static_site/       # S3 bucket + website config + default index.html #
-        cloudfront_cdn/       # CloudFront + origin access control #
-        cert_dns/             # ACM cert + DNS validation in Route 53 #
-        route53_record/       # A-record alias to CloudFront #
 
 🚀 How to Deploy
+Ensure you have terraform installed, and that your AWS creds are exported, then;
 - git clone https://github.com/your-username/terraform.git
 - cd terraform/secure-s3-https
 - Set up your values in terraform.tfvars:
@@ -25,10 +16,11 @@ secure-s3-https/
     - domain_name  = "your-unique domain ie. site.doit.com.com"
     - zone_name    = "your-unique zone name ie. doit.com."
 - Initialize Terraform and deploy:
-    - terraform init
+    - terraform init (if necessary)
     - terraform plan
     - terraform apply
-    - Visit your site at: https://site.doit.com
+
+Visit your site at: https://$domain_name/$zone_name
 
 🧼 Teardown
 To clean everything up:
