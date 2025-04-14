@@ -5,10 +5,10 @@ variable "bucket_name" {
 
 variable "domain_name" {
   type        = string
-  description = "Full site domain (e.g., site.doit.com)"
+  description = "Full site domain (e.g., doit.com)"
 }
 
 variable "zone_name" {
   type        = string
-  description = "Route53 zone name (must end in a dot, e.g., doit.com.)"
+  description = "Route53 zone name (must end in a dot, e.g., ste.)"
 }
