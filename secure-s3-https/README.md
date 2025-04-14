@@ -10,9 +10,8 @@ Modules in This Project
 
 🚀 How to Deploy
 Ensure you have terraform installed, and that your AWS creds are exported, then;
-- git clone https://github.com/your-username/terraform.git
-- cd terraform/secure-s3-https
-- Set up your values in terraform.tfvars:
+- clone winslowb/terraform.git
+- Set up your values in ./terraform.tfvars:
     - bucket_name  = "your-unique-bucket-name"
     - domain_name  = "your-unique domain ie. site.doit.com.com"
     - zone_name    = "your-unique zone name ie. doit.com."
