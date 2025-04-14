@@ -1,10 +1,12 @@
 🔐 Deploy a Secure Static Website to AWS using Terraform
 This module-based Terraform project deploys a secure, HTTPS-enabled static website using:
 
-- S3 for file hosting
-- CloudFront for HTTPS + CDN delivery
-- Route 53 for DNS
-- ACM for TLS certificates (auto-validated via DNS)
+Modules in This Project
+ |Module	|Responsibility|
+ |s3_static_site	|Creates S3 bucket and uploads index.html|
+ |cloudfront_cdn	|CloudFront CDN + OAC setup|
+ |cert_dns	|ACM TLS cert with DNS validation|
+ |route53_record	|A-record for CloudFront in Route 53|
 
 
 🚀 How to Deploy
@@ -26,12 +28,6 @@ This does not automatically provide WAF protection. You can enable this within y
 
 🧼 Teardown
 To clean everything up:
-- aws s3 rm s3://your-unique-bucket-name --recursive
+- aws s3 rm s3://$bucket_name --recursive (or delete index.html from the console)
 - terraform destroy
 
-🧱 Modules in This Project
-- Module	Responsibility
-- s3_static_site	Creates S3 bucket and uploads index.html
-- cloudfront_cdn	CloudFront CDN + OAC setup
-- cert_dns	ACM TLS cert with DNS validation
-- route53_record	A-record for CloudFront in Route 53
