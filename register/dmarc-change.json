@@ -1,0 +1,14 @@
+{
+  "Comment": "Add DMARC for $DOMAIN",
+  "Changes": [{
+    "Action": "UPSERT",
+    "ResourceRecordSet": {
+      "Name": "_dmarc.$DOMAIN.",
+      "Type": "TXT",
+      "TTL": 300,
+      "ResourceRecords": [{
+        "Value": "\"v=DMARC1; p=quarantine; rua=mailto:dmarc@$DOMAIN; ruf=mailto:dmarc@$DOMAIN; fo=1\""
+      }]
+    }
+  }]
+}

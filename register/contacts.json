@@ -1,0 +1,17 @@
+{
+  "DomainName": "$DOMAIN",
+  "DurationInYears": 1,
+  "AutoRenew": true,
+  "AdminContact":   { "FirstName": "chet", "LastName": "la'grep", "ContactType": "PERSON",
+    "Email": "bill@example.com", "PhoneNumber": "+1.3125551212",
+    "AddressLine1": "123 Example St", "City": "Schaumburg", "State": "IL", "CountryCode": "US", "ZipCode": "60076" },
+  "RegistrantContact": { "FirstName": "chet", "LastName": "la'grep", "ContactType": "PERSON",
+    "Email": "bill@example.com", "PhoneNumber": "+1.3125551212",
+    "AddressLine1": "123 Example St", "City": "Schaumburg", "State": "IL", "CountryCode": "US", "ZipCode": "60076" },
+  "TechContact":   { "FirstName": "chet", "LastName": "la'grep", "ContactType": "PERSON",
+    "Email": "bill@example.com", "PhoneNumber": "+1.3125551212",
+    "AddressLine1": "123 Example St", "City": "Schaumburg", "State": "IL", "CountryCode": "US", "ZipCode": "60076" },
+  "PrivacyProtectAdminContact": true,
+  "PrivacyProtectRegistrantContact": true,
+  "PrivacyProtectTechContact": true
+}

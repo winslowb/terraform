@@ -1,0 +1,77 @@
+/// 
+aws route53domains list-domains --region us-east-1
+        {
+            "Domains": [
+                {
+                    "DomainName": "$DOMAIN.com",
+                    "AutoRenew": true,
+                    "TransferLock": true,
+                    "Expiry": 1784167362.0
+                }
+            ]
+        }
+
+aws route53 list-hosted-zones-by-name --dns-name $DOMAIN
+        {
+            "HostedZones": [
+                {
+                    "Id": "/hostedzone/Z09149511A5",
+                    "Name": "$DOMAIN.",
+                    "CallerReference": "RISWorkflow-RD:a763c912-e611-45a",
+                    "Config": {
+                        "Comment": "HostedZone created by Route53 Registrar",
+                        "PrivateZone": false
+                    },
+                    "ResourceRecordSetCount": 2
+                },
+                {
+                    "Id": "/hostedzone/Z0146382A8NSD5JV6LRS",
+                    "Name": "$DOMAIN.com.",
+                    "CallerReference": "ca2e45ea-b4d6-4ad3-",
+                    "Config": {
+                        "Comment": "",
+                        "PrivateZone": false
+                    },
+                    "ResourceRecordSetCount": 15
+                }
+            ],
+            "DNSName": "$DOMAIN",
+            "IsTruncated": false,
+            "MaxItems": "100"
+        }
+
+aws route53domains get-domain-detail \
+  --region us-east-1 \
+  --domain-name $DOMAIN
+
+aws route53domains check-domain-availability \
+  --region us-east-1 \
+  --domain-name $DOMAIN
+        # EXPECT: UNAVAILABLE (someone owns it) or AVAILABLE (registration failed)
+        {
+            "Availability": "UNAVAILABLE"
+        }
+
+aws route53domains list-operations \
+  --region us-east-1 \
+  --submitted-since 2025-08-01T00:00:00Z \
+  --query "Operations[?Type=='REGISTER_DOMAIN'].[SubmittedDate,Status,DomainName,OperationId]" \
+  --output table
+        -----------------------------------------------------------------------------------------
+        |                                    ListOperations                                     |
+        +----------------+--------------+-------------+-----------------------------------------+
+        |  1755532652.953|  IN_PROGRESS |  $DOMAIN|  -891d-2b8cf4d17ff6                         |
+        +----------------+--------------+-------------+-----------------------------------------+
+
+aws route53domains get-operation-detail \
+  --region us-east-1 \
+  --operation-id 09016809-8745-42dd-891d-2b8cf4d17ff6
+        {
+            "OperationId": "--2b8cf4d17ff6",
+            "Status": "SUCCESSFUL",
+            "DomainName": "$DOMAIN",
+            "Type": "REGISTER_DOMAIN",
+            "SubmittedDate": 1755532.953,
+            "LastUpdatedDate": 17555.998
+        }
+
